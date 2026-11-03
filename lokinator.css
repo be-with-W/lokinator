@@ -140,6 +140,12 @@ main {
   font-weight: 900; /* 吹き出しの他の文字(700)より太く */
   font-size: 1.2em; /* 吹き出しの文字の1.2倍 */
 }
+/* 途中で改行させたくない言葉のまとまり(折り返すときはまとまりの間で改行する) */
+.bubble .phrase {
+  display: inline-block;
+  max-width: 100%; /* まとまりだけで吹き出しより長いときは、はみ出さずにその中で改行する */
+  word-break: keep-all; /* その場合も、台詞の「|」(<wbr>)の位置でだけ改行する */
+}
 .bubble:empty {
   display: none;
 }

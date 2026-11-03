@@ -243,7 +243,7 @@ $modes.querySelectorAll(".mode").forEach(b => {
 // skipNext: true なら次の質問を飛ばす
 // face: その質問のときのロキの表情(character/loki_kyosuke○.png の番号。なしなら0)
 const QUIZ = [
-  { text: "キミはどんな世界の物語が読みたい？", choices: [
+  { text: "どんな世界の物語が読みたいかな？", choices: [
     { label: "現代", type: "score", tags: ["現代"] },
     { label: "近未来", type: "score", tags: ["SF"] },
     { label: "とおい昔", type: "score", tags: ["歴史"] },
@@ -276,9 +276,9 @@ const QUIZ = [
     { label: "家族との絆", type: "score", tags: ["家族愛・兄弟愛"] },
     { label: "謎と真相", type: "score", tags: ["ミステリー"] },
     { label: "強さと勝利", type: "score", tags: ["バトル・アクション"] },
-    { label: "なんでも" }
+    { label: "どれでも" }
   ] },
-  { text: "グロテスクな表現は平気？", face: 3, choices: [
+  { text: "グロテスクな表現は平気かい？", face: 3, choices: [
     { label: "むしろ好き", type: "score", tags: ["ホラー", "バイオレンス"] },
     { label: "ふつう" },
     { label: "苦手", type: "exclude", tags: ["ホラー", "バイオレンス"] }
@@ -310,6 +310,17 @@ function setFace(n) {
 function setQuizFace(n) {
   quizFace = n;
   if (document.body.dataset.mode === "question") setFace(n);
+}
+
+// 質問1の前のあいさつ(ポイントには影響しない)。
+// ページを開いたときだけ表示し、『もう一度会話する』では飛ばして質問1から始める
+function quizIntro() {
+  // 吹き出しが狭くて折り返すときは「我と話が／したいのかい？」で改行する
+  setBubble(phrases(["我と話が", "したいのかい？"]), true);
+  setQuizFace(0);
+  const start = el("button", { type: "button", className: "q-choice", textContent: "会話を始める" });
+  start.addEventListener("click", quizStart);
+  $quiz.replaceChildren(el("div", { className: "q-choices float-in" }, [start]));
 }
 
 function quizStart() {
@@ -397,10 +408,8 @@ function quizAnswer() {
   restart.addEventListener("click", quizStart);
   const pick = quizDraw();
   setQuizFace(0);
-  // タイトル部分だけ色を変えて目立たせる
-  setBubble(pick
-    ? ["キミにおすすめの物語は", el("br"), el("span", { className: "bubble-title", textContent: "『" + pick.name + "』" }), el("br"), "だよ"]
-    : "ぴったりの物語が見つからなかったよ", true);
+  // 吹き出しが狭くて折り返すときは「／」の位置で改行する
+  setBubble(phrases(pick ? ["キミに合う物語が", "見つかったようだね"] : ["物語が|見つからなかった", "ようだね"]), true);
   // 『物語を読む』はURLがなければ押せない状態で表示(カード内のリンクは出さない)
   const actions = el("div", { className: "q-actions float-in-item" });
   actions.style.animationDelay = "0.1s"; // カードより少し遅れて表示
@@ -420,6 +429,13 @@ function quizAnswer() {
   );
 }
 
+// 吹き出しの台詞を、途中で改行しないまとまりに分ける(折り返すときはまとまりの間で改行される)。
+// まとまりの中の「|」は、まとまりだけで吹き出しに入りきらないときに改行する位置
+function phrases(parts) {
+  return parts.map(t => el("span", { className: "phrase" },
+    t.split("|").flatMap((s, i) => i ? [el("wbr"), s] : [s])));
+}
+
 // 吹き出しの文章を変える。content は文字列か、文字列と要素の配列
 // animate が true ならフロートインで表示
 function setBubble(content, animate) {
@@ -435,5 +451,5 @@ function playBubble() {
   $bubble.classList.add("float-in-item");
 }
 
-quizStart();
+quizIntro();
 render();
