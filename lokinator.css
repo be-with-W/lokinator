@@ -643,6 +643,7 @@ main.about {
     right: auto;
     top: auto;
     transform: none;
+    min-width: 220px; /* 短い文でも、しっぽ(中央から75px左)が角の丸みにかからない幅にする */
     max-width: 100%;
     white-space: normal;
     text-align: center;
