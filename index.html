@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ロキネーター - SideM劇中劇サーチツール</title>
+<link rel="stylesheet" href="lokinator.css">
+</head>
+<body data-mode="simple">
+<main>
+  <p class="sub">SideM劇中劇サーチツール</p>
+  <h1>lokinator<img class="title-icon" src="character/loki_kyosuke_mini.png" alt="ロキ（蒼井享介）"></h1>
+  <p class="sub credit"><a href="about.html">当サイトについて</a></p>
+  <div class="modes" id="modes">
+    <button class="mode" type="button" data-mode="simple" aria-pressed="true">ジャンルから検索</button>
+    <button class="mode" type="button" data-mode="question" aria-pressed="false">lokinator</button>
+  </div>
+
+  <!-- パソコンでは画面右下に固定、スマホでは質問モードのときだけ選択肢の上に表示 -->
+  <div class="stage"><p class="bubble" id="bubble" aria-live="polite" hidden></p><img src="character/loki_kyosuke0.png" alt="ロキ（蒼井享介）"></div>
+
+  <!-- ページを開いたときはジャンル検索を表示 -->
+  <section id="mode-simple">
+    <p class="search-heading" id="tags-heading">ジャンル</p>
+    <div class="tags" id="tags" role="group" aria-labelledby="tags-heading"></div>
+
+    <!-- 出演者検索: 3人まで。ボタンを押すと出演者の一覧がプルダウンで開く(中身は lokinator.js で作成) -->
+    <p class="search-heading idol-heading" id="idol-heading">出演アイドル</p>
+    <div class="idol-select" id="idol-select" role="group" aria-labelledby="idol-heading"></div>
+
+    <div class="bar">
+      <p class="count" id="count" aria-live="polite"></p>
+      <button class="clear" id="clear" type="button">すべて解除</button>
+    </div>
+
+    <div id="result"></div>
+  </section>
+
+  <section id="mode-question" hidden>
+    <div class="quiz" id="quiz" aria-live="polite"></div>
+  </section>
+</main>
+
+<script src="contents.js"></script>
+<script src="lokinator.js"></script>
+</body>
+</html>
