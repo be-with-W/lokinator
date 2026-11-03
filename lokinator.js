@@ -142,9 +142,25 @@ function createCard(c, showLink = true, highlight = []) {
     .map(([href, text]) => el("a", { href, textContent: text, target: "_blank", rel: "noopener" }));
   if (links.length) body.append(el("div", { className: "links" }, links));
   const card = el("li", { className: "card" });
-  if (c.image) card.append(el("img", { src: c.image, alt: "", loading: "lazy" }));
+  // image に YouTube の URL が入っていたら、画像の代わりに動画を埋め込む
+  const video = youtubeId(c.image);
+  if (video) card.append(el("iframe", {
+    src: "https://www.youtube-nocookie.com/embed/" + video,
+    title: c.name,
+    loading: "lazy",
+    allow: "encrypted-media; picture-in-picture; fullscreen",
+    allowFullscreen: true,
+    referrerPolicy: "strict-origin-when-cross-origin"
+  }));
+  else if (c.image) card.append(el("img", { src: c.image, alt: "", loading: "lazy" }));
   card.append(body);
   return card;
+}
+
+// YouTube の URL(youtu.be/〇〇、watch?v=〇〇、shorts/〇〇、embed/〇〇)から動画IDを取り出す。YouTube でなければ空文字
+function youtubeId(url) {
+  const m = (url || "").match(/(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/(?:watch\?(?:.*&)?v=|shorts\/|embed\/|live\/))([\w-]{11})/);
+  return m ? m[1] : "";
 }
 
 // 選択中のタグをすべて持つデータのうち、各タグを持つ件数を表示

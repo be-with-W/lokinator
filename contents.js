@@ -3,7 +3,22 @@
 // tags: ジャンル(data_mood.csv) / idols: 出演者(data_idols.csv)
 
 // 出演者の一覧(data_idols.csv の列の順番。出演者検索のプルダウンに使う)
-const IDOLS = ["天ヶ瀬 冬馬", "御手洗 翔太", "伊集院 北斗", "天道 輝", "桜庭 薫", "柏木 翼", "都築 圭", "神楽 麗", "鷹城 恭二", "ピエール", "渡辺 みのり", "蒼井 悠介", "蒼井 享介", "握野 英雄", "木村 龍", "信玄 誠司", "猫柳 キリオ", "華村 翔真", "清澄 九郎", "秋山 隼人", "冬美 旬", "榊 夏来", "若里 春名", "伊瀬谷 四季", "紅井 朱雀", "黒野 玄武", "神谷 幸広", "東雲 荘一郎", "アスラン=BBⅡ世", "卯月 巻緒", "水嶋 咲", "岡村 直央", "橘 志狼", "姫野 かのん", "硲 道夫", "舞田 類", "山下 次郎", "大河 タケル", "円城寺 道流", "牙崎 漣", "秋月 涼", "兜 大吾", "九十九 一希", "葛之葉 雨彦", "北村 想楽", "古論 クリス", "天峰 秀", "花園 百々人", "眉見 鋭心"];
+const IDOLS = ["天ヶ瀬 冬馬", "御手洗 翔太", "伊集院 北斗", 
+    "天道 輝", "桜庭 薫", "柏木 翼", 
+    "都築 圭", "神楽 麗", 
+    "鷹城 恭二", "ピエール", "渡辺 みのり", 
+    "蒼井 悠介", "蒼井 享介", 
+    "握野 英雄", "木村 龍", "信玄 誠司", 
+    "猫柳 キリオ", "華村 翔真", "清澄 九郎", 
+    "秋山 隼人", "冬美 旬", "榊 夏来", "若里 春名", "伊瀬谷 四季", 
+    "紅井 朱雀", "黒野 玄武", 
+    "神谷 幸広", "東雲 荘一郎", "アスラン=BBⅡ世", "卯月 巻緒", "水嶋 咲", 
+    "岡村 直央", "橘 志狼", "姫野 かのん", 
+    "硲 道夫", "舞田 類", "山下 次郎", 
+    "大河 タケル", "円城寺 道流", "牙崎 漣", 
+    "秋月 涼", "兜 大吾", "九十九 一希", 
+    "葛之葉 雨彦", "北村 想楽", "古論 クリス", 
+    "天峰 秀", "花園 百々人", "眉見 鋭心"];
 
 const CONTENTS = [
  {
@@ -102,7 +117,7 @@ const CONTENTS = [
   "url": "",
   "site": "https://idolmaster-official.jp/live_event/sidem_prs2023/movie/",
   "music": "https://open.spotify.com/intl-ja/album/0dGEmk2aSP5DC7KDq0jPqi?si=z-ORLwViQeivkPGD3FBCQA",
-  "image": "",
+  "image": "https://youtu.be/OAwQSAUa6TE?si=WVcud3IokcZsHnVP",
   "tags": ["バトル・アクション", "友情", "学園"],
   "idols": ["天ヶ瀬 冬馬", "御手洗 翔太", "伊集院 北斗", "天道 輝", "桜庭 薫", "柏木 翼", "都築 圭", "神楽 麗", "鷹城 恭二", "ピエール", "渡辺 みのり", "蒼井 悠介", "蒼井 享介", "握野 英雄", "木村 龍", "信玄 誠司", "猫柳 キリオ", "華村 翔真", "清澄 九郎", "秋山 隼人", "冬美 旬", "榊 夏来", "若里 春名", "伊瀬谷 四季", "紅井 朱雀", "黒野 玄武", "神谷 幸広", "東雲 荘一郎", "アスラン=BBⅡ世", "卯月 巻緒", "水嶋 咲", "岡村 直央", "橘 志狼", "姫野 かのん", "硲 道夫", "舞田 類", "山下 次郎", "大河 タケル", "円城寺 道流", "牙崎 漣", "秋月 涼", "兜 大吾", "九十九 一希", "葛之葉 雨彦", "北村 想楽", "古論 クリス", "天峰 秀", "花園 百々人", "眉見 鋭心"]
  },
@@ -698,17 +713,17 @@ const CONTENTS = [
  },
  {
   "id": "D0001",
-  "name": "Change to Chance / 選んできた道の先に",
+  "name": "Change to Chance",
   "url": "https://youtu.be/vuw2kmXp95A?si=wnhZUbYJHyiWe53K",
   "site": "",
   "music": "https://open.spotify.com/intl-ja/track/42kwrotvztfPkNdmr7KqHh?si=0fcc21d50e15437d",
-  "image": "",
+  "image": "https://youtu.be/vuw2kmXp95A?si=NFBGoTT4KRnzTWJS",
   "tags": ["現代", "ヒューマンドラマ", "友情"],
   "idols": ["天道 輝", "桜庭 薫", "柏木 翼"]
  },
  {
   "id": "E0001",
-  "name": "Amber Color Oasis / 寄り添う気持ち",
+  "name": "Amber Color Oasis",
   "url": "https://asobistory.asobistore.jp/connectwithmusic/detail/6n72pxv6g9zw98v/",
   "site": "",
   "music": "https://open.spotify.com/intl-ja/track/60Q05J053fkCGBPfyMGGAQ?si=940b44c4c41d48e0",
@@ -718,7 +733,7 @@ const CONTENTS = [
  },
  {
   "id": "E0002",
-  "name": "千夜一夜に瞬く星よ / 砂の国の物語",
+  "name": "砂の国の物語",
   "url": "https://asobistory.asobistore.jp/connectwithmusic/detail/81r4zj0drdpn23k/",
   "site": "",
   "music": "https://open.spotify.com/intl-ja/track/5G0nObXQfmrdPvACqjmKBC?si=ef937ce166f74047",
@@ -728,7 +743,7 @@ const CONTENTS = [
  },
  {
   "id": "E0003",
-  "name": "宵闇のイリュージョン / 熱望していたはずの…",
+  "name": "宵闇のイリュージョン",
   "url": "https://asobistory.asobistore.jp/connectwithmusic/detail/lvk2yk0155pqg10/",
   "site": "",
   "music": "https://open.spotify.com/intl-ja/track/7kJr4oMWxGXz6uaRZmUbN1?si=a861b903d71c4ac5",
@@ -748,7 +763,7 @@ const CONTENTS = [
  },
  {
   "id": "E0005",
-  "name": "Dear My Light, / 歩み続ける者の肖像",
+  "name": "歩み続ける者の肖像",
   "url": "https://asobistory.asobistore.jp/connectwithmusic/detail/02jgpd1oj0pm6vo/",
   "site": "",
   "music": "https://open.spotify.com/intl-ja/track/5C2zaNHokgVzSJVMP5JoOi?si=44ca71781d5d414c",
@@ -758,7 +773,7 @@ const CONTENTS = [
  },
  {
   "id": "E0006",
-  "name": "ミート・ユメノトピア / 自分の理由",
+  "name": "ミート・ユメノトピア",
   "url": "https://asobistory.asobistore.jp/connectwithmusic/detail/4r1kp00g1vpv693/",
   "site": "",
   "music": "https://open.spotify.com/intl-ja/track/5pv12fiZt9jDSmBGACM7r7?si=8fabf966bd644fcf",
@@ -768,7 +783,7 @@ const CONTENTS = [
  },
  {
   "id": "E0007",
-  "name": "I’ll show you / Time goes on",
+  "name": "Time goes on",
   "url": "https://asobistory.asobistore.jp/connectwithmusic/detail/0dmezwekrozognq/",
   "site": "",
   "music": "https://open.spotify.com/intl-ja/track/2ME2S04nNXYkSAmnqZS07O?si=cad79fb55cc546d9",
@@ -912,7 +927,7 @@ const CONTENTS = [
   "url": "",
   "site": "https://idolmaster-official.jp/live_event/sidem_prs2024/movie/",
   "music": "https://open.spotify.com/intl-ja/track/0bTTrI6ZImrgDIo0UX56hL?si=e51ee7777e0e4d50",
-  "image": "",
+  "image": "https://youtu.be/psadMkMXi7E?si=QeN1lXxh6Jt_nhJe",
   "tags": ["ファンタジー", "シリアス", "バトル・アクション", "バイオレンス", "ヒューマンドラマ", "友情", "家族愛・兄弟愛", "アイドルが死ぬ"],
   "idols": ["天ヶ瀬 冬馬", "御手洗 翔太", "伊集院 北斗", "天道 輝", "桜庭 薫", "柏木 翼", "都築 圭", "神楽 麗", "鷹城 恭二", "ピエール", "渡辺 みのり", "蒼井 悠介", "蒼井 享介", "握野 英雄", "木村 龍", "信玄 誠司", "猫柳 キリオ", "華村 翔真", "清澄 九郎", "秋山 隼人", "冬美 旬", "榊 夏来", "若里 春名", "伊瀬谷 四季", "紅井 朱雀", "黒野 玄武", "神谷 幸広", "東雲 荘一郎", "アスラン=BBⅡ世", "卯月 巻緒", "水嶋 咲", "岡村 直央", "橘 志狼", "姫野 かのん", "硲 道夫", "舞田 類", "山下 次郎", "大河 タケル", "円城寺 道流", "牙崎 漣", "秋月 涼", "兜 大吾", "九十九 一希", "葛之葉 雨彦", "北村 想楽", "古論 クリス", "天峰 秀", "花園 百々人", "眉見 鋭心"]
  },

@@ -46,6 +46,28 @@ body {
 html {
   scrollbar-gutter: stable;
 }
+/* スクロールバー: バーは金色(角は直角)、通り道は背景の紺、上下の矢印なし。
+   Chrome・Edge・Safari 用(scrollbar-color を指定するとこちらが効かなくなるので併用しない) */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #d4af37;
+  border-radius: 0;
+}
+::-webkit-scrollbar-button {
+  display: none;
+}
+/* Firefox 用(矢印はもともと出ない) */
+@supports not selector(::-webkit-scrollbar) {
+  html {
+    scrollbar-color: #d4af37 var(--bg);
+  }
+}
 :root {
   /* ロキの画像の幅。画面幅の40%(最大520px)。
      画面が狭くて吹き出しの場所(240px)が足りないときは、画面幅の30%まで小さくする */
@@ -461,6 +483,15 @@ main.about {
   width: 100%;
   max-width: 400px;
   height: auto; /* 画像ごとの縦横比のまま表示(切り抜かない) */
+  border-radius: 6px;
+}
+/* 画像の代わりに埋め込む YouTube 動画(画像と同じ幅、16:9) */
+.card iframe {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 16 / 9;
+  border: 0;
   border-radius: 6px;
 }
 .card h2 {
